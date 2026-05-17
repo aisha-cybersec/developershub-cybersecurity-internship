@@ -6,8 +6,8 @@
 ---
 
 ## Week 1  Security Assessment 
---Date: 17 May 2026
---Status: COMPLETED
+## Date: 17 May 2026
+## Status: COMPLETED
 
 ### Application Tested:
 - OWASP Juice Shop v14.5.1
