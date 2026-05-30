@@ -25,7 +25,7 @@
 - XSS
 - Weak Password Policy
 
-- 
+
 
   ### Week 2  Security Fixes Implemented
   Date: 30 May 2026
