@@ -25,7 +25,10 @@
 - XSS
 - Weak Password Policy
 
+- 
+
   ### Week 2  Security Fixes Implemented
+  
   
   ### What I Did in week 2:
 - Installed validator, bcrypt, jsonwebtoken, helmet
