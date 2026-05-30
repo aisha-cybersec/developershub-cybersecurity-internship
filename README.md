@@ -25,4 +25,16 @@
 - XSS
 - Weak Password Policy
 
+  ### Week 2 - Security Fixes Implemented
+  ## Week 2 — Security Fixes 
+  **Status:** COMPLETED
+
+### What I Did:
+- Installed validator, bcrypt, jsonwebtoken, helmet
+- Implemented input validation
+- Added password hashing with bcrypt
+- Added JWT authentication
+- Added Helmet.js security headers
+- All tests passing!
+
 
