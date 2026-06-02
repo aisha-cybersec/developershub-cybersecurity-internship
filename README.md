@@ -28,7 +28,7 @@
 
 
   ### Week 2  Security Fixes Implemented
-- Date: 02 June 2026
+- Date: 30 May 2026
 - Status: COMPLETED
   
   ### What I Did in week 2:
@@ -36,8 +36,8 @@
 - Implemented input validation
 
 ### Week 03: Advanced Security
--Date: 02 JUNE 2026
--Status : Completed 
+- Date:  02 JUNE 2026
+- Status : Completed 
 
 ### What i did in week 3:
 - Winston logging library installed
