@@ -28,7 +28,7 @@
 
 
   ### Week 2  Security Fixes Implemented
-  Date: 30 May 2026
+  -Date: 30 May 2026
 - Status: COMPLETED
   
   ### What I Did in week 2:
@@ -36,19 +36,17 @@
 - Implemented input validation
 
 ### Week 03: Advanced Security
-Date: 02 JUNE 2026
+-Date: 02 JUNE 2026
 -Status : Completed 
 
 ### What i did in week 3:
 -Winston logging library installed
--logger.js created with Console + File transport
+-logger.js created with Console , File transport
 -Logger integrated into server.ts
 -Nmap installed (v7.99)
 -Port scan on localhost:3000 completed
 -Scan results saved to nmap_scan_results.txt
 -Security checklist created
-
-
 - Added password hashing with bcrypt
 - Added JWT authentication
 - Added Helmet.js security headers
