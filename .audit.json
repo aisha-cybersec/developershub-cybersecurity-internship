@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 2
+    },
+    "auditLog": "C:\\Users\\Lenovo\\Desktop\\juice-shop\\logs/.audit.json",
+    "files": [
+        {
+            "date": 1780380636442,
+            "name": "C:\\Users\\Lenovo\\Desktop\\juice-shop\\logs\\access.log.2026-06-02",
+            "hash": "41b273a27b404b94f1f696088936584c"
+        }
+    ]
+}
