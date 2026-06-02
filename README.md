@@ -40,16 +40,15 @@
 -Status : Completed 
 
 ### What i did in week 3:
--Winston logging library installed
--logger.js created with Console , File transport
--Logger integrated into server.ts
--Nmap installed (v7.99)
--Port scan on localhost:3000 completed
--Scan results saved to nmap_scan_results.txt
--Security checklist created
-- Added password hashing with bcrypt
-- Added JWT authentication
-- Added Helmet.js security headers
-- All tests passing!
+- Winston logging library installed
+- logger.js created with Console.
+- Logger integrated into server.ts
+- Nmap installed (v7.99.
+- Scan results saved to nmap_scan_results.txt
+- Security checklist created.
+- Added password hashing with bcrypt.
+- Added JWT authentication.
+- Added Helmet.js security headers.
+
 
 
