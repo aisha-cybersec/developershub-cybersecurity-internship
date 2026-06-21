@@ -1,14 +1,5 @@
 # Cybersecurity Internship – Week 4: Advanced Threat Detection & Web Security
 
-## Overview
-
-This project implements advanced security measures for a Node.js/Express API, covering real-time intrusion detection, API security hardening, and HTTP security headers — as required for Week 4 of the Cybersecurity Internship (deadline: June 30, 2026).
-
-## Goal
-
-Implement advanced security measures, detect threats in real-time, and secure API endpoints.
-
----
 
 ## Features Implemented
 
