@@ -1,3 +1,18 @@
+# Cybersecurity Internship – Week 4
+## Advanced Threat Detection & Web Security
+
+A Node.js/Express API implementing real-time intrusion detection, API hardening, and security headers.
+
+---
+
+## Features
+
+### 1. Intrusion Detection (Fail2Ban)
+- Real-time monitoring of failed login attempts via Fail2Ban.
+- Custom filter (`/etc/fail2ban/filter.d/nodejs-auth.conf`) detects failed-login patterns in the app log.
+- Custom jail (`nodejs-auth`) bans an IP after **3 failed attempts in 10 minutes**, for **1 hour**.
+- Failed attempts logged via Winston to `logs/security.log`.
+- 
 ### 2. API Security Hardening
 - **Rate limiting**: 100 req/15min globally; 5 req/15min on login (brute-force protection).
 - **CORS**: restricted origins, methods, and credentials.
