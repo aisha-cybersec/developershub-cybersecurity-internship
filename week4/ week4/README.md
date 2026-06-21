@@ -1,6 +1,5 @@
 # Cybersecurity Internship – Week 4: Advanced Threat Detection & Web Security
 
-
 ## Features Implemented
 
 ### 1. Intrusion Detection & Monitoring (Fail2Ban)
@@ -89,29 +88,10 @@ curl http://localhost:3000/api/data -H "x-api-key: <your-api-key>"
 sudo fail2ban-client status nodejs-auth
 ```
 
----
-
-## Screenshots
-
-| # | Description | File |
-|---|---|---|
-| 1 | Security headers (CSP + HSTS) | `screenshots/01-headers.png` |
-| 2 | Successful login with JWT token | `screenshots/02-login-success.png` |
-| 3 | Failed login rejected | `screenshots/03-login-failed.png` |
-| 4 | Rate limiting blocking brute-force | `screenshots/04-rate-limit.png` |
-| 5 | API key protection | `screenshots/05-api-key.png` |
-| 6 | Fail2Ban banning IP | `screenshots/06-fail2ban-ban.png` |
-| 7 | Server running | `screenshots/07-server-running.png` |
-| 8 | Project structure | `screenshots/08-project-structure.png` |
-
----
-
 ## Notes
 
 - `.env` and `node_modules/` excluded from version control.
 - Rate-limit counters are in-memory and reset on server restart.
 - Fail2Ban requires `backend = polling` and `ignoreself = false` inside WSL2.
 
-## Author
-
-Week 4 – Cybersecurity Internship Project
+nternship Project
