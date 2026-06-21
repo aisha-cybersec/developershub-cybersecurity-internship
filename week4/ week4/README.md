@@ -1,53 +1,23 @@
-# Cybersecurity Internship – Week 4: Advanced Threat Detection & Web Security
-
-## Features Implemented
-
-### 1. Intrusion Detection & Monitoring (Fail2Ban)
-
-- Real-time monitoring of failed login attempts using **Fail2Ban**.
-- Custom Fail2Ban filter (`/etc/fail2ban/filter.d/nodejs-auth.conf`) parses the app's security log for failed login patterns.
-- Custom jail (`nodejs-auth`) automatically bans an IP after **3 failed login attempts within 10 minutes**, for **1 hour**.
-- All failed login attempts are logged via **Winston** to `logs/security.log`.
-
-**Configuration:**
-
 ### 2. API Security Hardening
+- **Rate limiting**: 100 req/15min globally; 5 req/15min on login (brute-force protection).
+- **CORS**: restricted origins, methods, and credentials.
+- **Authentication**: JWT for protected routes, API key (`x-api-key` header) for data routes.
 
-- **Rate limiting** (`express-rate-limit`):
-  - Global limit: 100 requests / 15 minutes per IP.
-  - Strict login limit: 5 attempts / 15 minutes per IP, to prevent brute-force attacks.
-- **CORS**: Configured via the `cors` package to restrict allowed origins, methods, and credentials.
-- **Authentication**:
-  - JWT-based authentication for protected routes (`/api/protected`).
-  - API key authentication for data routes (`/api/data`), validated via `x-api-key` header.
-
-### 3. Security Headers & CSP Implementation
-
-Implemented using **Helmet**:
-- **Content-Security-Policy (CSP)**: restricts script/style/object sources to `'self'`, blocks inline scripts, upgrades insecure requests.
-- **Strict-Transport-Security (HSTS)**: enforces HTTPS for 1 year, including subdomains, with preload.
-- Additional headers: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `X-XSS-Protection`, and more.
+### 3. Security Headers & CSP
+Implemented via Helmet:
+- **CSP**: restricts scripts/styles/objects to `'self'`, blocks inline scripts.
+- **HSTS**: enforces HTTPS for 1 year, includes subdomains, preload-ready.
+- Plus `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, and more.
 
 ---
 
 ## Tech Stack
 
-- Node.js v20 / Express.js
-- Helmet (security headers)
-- express-rate-limit (rate limiting)
-- cors (CORS policy)
-- jsonwebtoken (JWT auth)
-- Winston (structured logging)
-- Fail2Ban (intrusion detection & IP banning)
-- Environment: WSL2 (Ubuntu) on Windows
+Node.js · Express · Helmet · express-rate-limit · cors · jsonwebtoken · Winston · Fail2Ban · WSL2 (Ubuntu)
 
 ---
 
-## Week 4 tasks wise  Structure 
-
----
-
-## Setup & Installation
+## Setup
 
 ```bash
 npm install
@@ -58,40 +28,41 @@ sudo service fail2ban start
 
 ---
 
-## Testing the Implementation
+## Testing
 
-**Health check:**
 ```bash
+# Health check
 curl http://localhost:3000/health
-```
 
-**Security headers:**
-```bash
+# Security headers
 curl -I http://localhost:3000/health
-```
 
-**Successful login:**
-```bash
-curl -X POST http://localhost:3000/api/auth/login -H "Content-Type: application/json" -d '{"username":"admin","password":"SecurePassword123!"}'
-```
+# Login
+curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"SecurePassword123!"}'
 
-**Rate limiting:** Run the failed-login command 6 times in a row.
+# Rate limiting — run 6x to trigger the block
+curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"wrong"}'
 
-**API key protection:**
-```bash
+# API key
 curl http://localhost:3000/api/data
 curl http://localhost:3000/api/data -H "x-api-key: <your-api-key>"
-```
 
-**Fail2Ban ban verification:**
-```bash
+# Fail2Ban status
 sudo fail2ban-client status nodejs-auth
 ```
+
+---
 
 ## Notes
 
 - `.env` and `node_modules/` excluded from version control.
-- Rate-limit counters are in-memory and reset on server restart.
-- Fail2Ban requires `backend = polling` and `ignoreself = false` inside WSL2.
+- Rate-limit counters are in-memory; reset on server restart.
+- Fail2Ban requires `backend = polling` and `ignoreself = false` under WSL2.
 
-nternship Project
+---
+
+**Week 4 — Cybersecurity Internship Project**
